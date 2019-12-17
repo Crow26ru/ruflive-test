@@ -1,0 +1,29 @@
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin mobile-only {
+  @media (min-width: $mobile-width) and (max-width: $desktop-width - 1px) {
+    @content;
+  }
+}
+
+/**
+* Для 2x Retina
+*/
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+/**
+* Сбрасывает отступы и маркеры для списков (ul и ol)
+*/
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
